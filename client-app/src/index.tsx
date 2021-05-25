@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'semantic-ui-css/semantic.min.css';
 import { Router } from 'react-router-dom';
 import {createBrowserHistory} from 'history';
 import 'react-toastify/dist/ReactToastify.min.css';

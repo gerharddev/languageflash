@@ -18,13 +18,13 @@ const NavBar: React.FC = () => {
           />
           Language Flash
         </Menu.Item>
-        <Menu.Item name='Activities' as={NavLink} to='/activities' />
+        <Menu.Item name='Practice' as={NavLink} to='/practice' />
         <Menu.Item>
           <Button
             as={NavLink}
-            to='/createActivity'
+            to='/createCard'
             positive
-            content='Create Activity'
+            content='Create Card'
           />
         </Menu.Item>
       </Container>

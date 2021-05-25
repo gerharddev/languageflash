@@ -21,7 +21,7 @@ const HomePage = () => {
         </Header>
             <Fragment>
                 <Button as={Link} to='/activities' size='huge' inverted>
-                    Go to activities!
+                    Go to main page!
                 </Button>
           </Fragment>
       </Container>
