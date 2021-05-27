@@ -4,14 +4,14 @@ import { Grid, Item, Loader } from 'semantic-ui-react';
 import { RootStoreContext } from '../../../app/stores/rootStore';
 import InfiniteScroll from 'react-infinite-scroller';
 import PracticeListItem from './PracticeListItem';
-import { IExercise } from '../../../app/models/exercise';
+import { Exercise } from '../../../app/models/exercise';
 
-const ActivityDashboard: React.FC = () => {
+export default   observer(function ActivityDashboard() {
   const rootStore = useContext(RootStoreContext);
   const {
   } = rootStore.cardStore;
   const [loadingNext, setLoadingNext] = useState(false);
-  let exercises : Array<IExercise> = [
+  let exercises : Array<Exercise> = [
    { id: 1, title: 'Sounds',description:'Hear the different sounds',image:'/assets/images/hearing.jpg'},
    { id: 2, title: 'Words',description:'Practice words with their translation',image:'/assets/images/words.jpg'},
    { id: 3, title: 'Sentences',description:'Practice sentences with their translation',image:'/assets/images/read.jpg'},
@@ -36,7 +36,5 @@ const ActivityDashboard: React.FC = () => {
       </Grid.Column>
     </Grid>
   );
-};
-
-export default observer(ActivityDashboard);
+})
 

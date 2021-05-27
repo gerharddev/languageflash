@@ -1,10 +1,14 @@
 import React from 'react';
 import { Item, Button, Segment, Icon, Label } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { IExercise } from '../../../app/models/exercise';
+import { Exercise } from '../../../app/models/exercise';
 import { format } from 'date-fns';
 
-const ActivityListItem: React.FC<{ exercise: IExercise }> = ({ exercise }) => {
+interface Props{
+  exercise: Exercise
+}
+
+export default function ActivityListItem ({ exercise }:Props) {
   return (
     <Segment.Group>
       <Segment clearing>
@@ -30,6 +34,6 @@ const ActivityListItem: React.FC<{ exercise: IExercise }> = ({ exercise }) => {
   );
 };
 
-export default ActivityListItem;
+
 
 

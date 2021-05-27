@@ -2,42 +2,30 @@ import React, { useContext, useEffect } from 'react';
 import { Grid } from 'semantic-ui-react';
 import { observer } from 'mobx-react-lite';
 import { RouteComponentProps } from 'react-router';
+import FlashCard from '../../../app/common/form/FlashCard';
+import { Exercise } from '../../../app/models/exercise';
+import { CardItem } from '../../../app/models/card';
 
 
 interface DetailParams {
   id: string;
 }
 
-const ExerciseDetails: React.FC<RouteComponentProps<DetailParams>> = ({
-  match,
-  history
-}) => {
-//   const rootStore = useContext(RootStoreContext);
-//   const { activity, loadActivity, loadingInitial } = rootStore.activityStore;
+export default observer(function ExerciseDetails() {
 
-//   useEffect(() => {
-//     loadActivity(match.params.id);
-//   }, [loadActivity, match.params.id, history]);
-
-//   if (loadingInitial)
-//     return <LoadingComponent content='Loading activity...' />;
-
-//   if (!activity)
-//     return <h2>Activity not found</h2>
+  let card: CardItem = { id: 1, word: 'the dog', translation: 'der Hund', image: '/assets/cardimages/dog.jpg' };
 
   return (
-    <Grid>
-        <h2>Its coming</h2>
-      {/* <Grid.Column width={10}>
-        <ActivityDetailedHeader activity={activity} />
-        <ActivityDetailedInfo activity={activity} />
-        <ActivityDetailedChat />
-      </Grid.Column>
-      <Grid.Column width={6}>
-        <ActivityDetailedSidebar attendees={activity.attendees} />
-      </Grid.Column> */}
+    <Grid >
+      <Grid.Row>
+        <Grid.Column width={3}>
+        </Grid.Column>
+        <Grid.Column width={10} textAlign='center'>
+          <FlashCard card={card} />
+        </Grid.Column>
+        <Grid.Column width={3}>
+        </Grid.Column>
+      </Grid.Row>
     </Grid>
   );
-};
-
-export default observer(ExerciseDetails);
+})
